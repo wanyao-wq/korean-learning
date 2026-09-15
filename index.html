@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>延世韩国语学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>延世韩国语学习平台</h1>
+        <nav>
+            <button class="nav-btn active" data-page="home">首页</button>
+            <button class="nav-btn" data-page="lesson">课程学习</button>
+            <button class="nav-btn" data-page="practice">练习</button>
+            <button class="nav-btn" data-page="progress">学习进度</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 首页 -->
+        <section id="home" class="page active">
+            <div class="welcome-card">
+                <h2>欢迎来到韩语学习平台</h2>
+                <p>基于《延世韩国语》第二册，系统学习韩语</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number" id="total-lessons">0</span>
+                    <span class="stat-label">已完成课程</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="total-words">0</span>
+                    <span class="stat-label">已学词汇</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="total-exercises">0</span>
+                    <span class="stat-label">完成练习</span>
+                </div>
+            </div>
+            <div class="lesson-list" id="lesson-list">
+                <!-- 课程列表将通过JS动态生成 -->
+            </div>
+        </section>
+
+        <!-- 课程学习页 -->
+        <section id="lesson" class="page">
+            <div class="lesson-header">
+                <button class="back-btn" onclick="showPage('home')">← 返回</button>
+                <h2 id="lesson-title">课程标题</h2>
+            </div>
+            <div class="lesson-content">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="text">课文</button>
+                    <button class="tab-btn" data-tab="vocab">词汇</button>
+                    <button class="tab-btn" data-tab="grammar">语法</button>
+                </div>
+                <div class="tab-content">
+                    <div id="text-tab" class="tab-panel active">
+                        <!-- 课文内容 -->
+                    </div>
+                    <div id="vocab-tab" class="tab-panel">
+                        <!-- 词汇表 -->
+                    </div>
+                    <div id="grammar-tab" class="tab-panel">
+                        <!-- 语法点 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 练习页 -->
+        <section id="practice" class="page">
+            <div class="practice-header">
+                <h2>练习</h2>
+                <select id="practice-lesson-select">
+                    <option value="">选择课程</option>
+                </select>
+            </div>
+            <div class="practice-content">
+                <div id="exercise-container">
+                    <!-- 练习题将通过JS动态生成 -->
+                </div>
+                <button class="check-btn" id="check-answers">检查答案</button>
+            </div>
+        </section>
+
+        <!-- 学习进度页 -->
+        <section id="progress" class="page">
+            <h2>学习进度</h2>
+            <div class="progress-content">
+                <div class="progress-chart" id="progress-chart">
+                    <!-- 进度图表 -->
+                </div>
+                <div class="progress-details" id="progress-details">
+                    <!-- 详细进度 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>延世韩国语学习平台 - 让韩语学习更简单</p>
+    </footer>
+
+    <script src="js/data.js?v=8"></script>
+    <script src="js/speech.js?v=8"></script>
+    <script src="js/app.js?v=8"></script>
+</body>
+</html>
